@@ -14,7 +14,9 @@
       "Exec(kill)",
       "Exec(git remote)",
       "Exec(npm install)",
-      "Exec(git init)"
+      "Exec(git init)",
+      "Exec(git commit)",
+      "Exec(git add)"
     ]
   }
 }
