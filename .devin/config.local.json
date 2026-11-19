@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Exec(ls)",
+      "Exec(node)",
+      "Exec(rm)",
+      "Exec(npm run)",
+      "Exec(python3)",
+      "Exec(grep)",
+      "Exec(npx)",
+      "Exec(sleep)",
+      "Exec(curl)",
+      "Exec(lsof)",
+      "Exec(kill)",
+      "Exec(git remote)",
+      "Exec(npm install)",
+      "Exec(git init)"
+    ]
+  }
+}
