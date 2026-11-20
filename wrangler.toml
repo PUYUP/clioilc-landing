@@ -1,4 +1,6 @@
-name = "clioilc"
+# Cloudflare Worker (static assets) for the landing site: clioilc-landing,
+# which serves clioilc.com. Deploy with `npm run deploy`.
+name = "clioilc-landing"
 compatibility_date = "2026-11-19"
 
 [assets]
