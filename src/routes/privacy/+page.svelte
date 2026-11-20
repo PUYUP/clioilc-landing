@@ -40,12 +40,26 @@
 		<li>Provide, operate, and improve the Service</li>
 		<li>Generate analytics and statistics on AI agent activity</li>
 		<li>Detect, prevent, and address technical issues and abuse</li>
+		<li>
+			Email you about team workspaces, such as an invitation or an accepted invitation. We use
+			your primary, verified GitHub email for this and nothing else.
+		</li>
 	</ul>
 
 	<h2>3. Data Sharing</h2>
 	<p>
 		We do not sell your personal information. We may share data with trusted service
 		providers who assist in operating the Service, or when required by law.
+	</p>
+	<p>
+		<strong>Team workspaces.</strong> Nothing is shared with other people unless you join a
+		workspace and link a folder to one of its projects with <code>clioilc link</code>. From then
+		on, members who can see that project see its usage, costs, errors and tool actions (such as
+		commands and file paths), from the moment you linked it, or with its earlier history if you
+		chose that. Your prompts, replies and thinking stay private unless you turn on sharing for
+		that project. Workspace admins also see an audit log of membership, invitation and link
+		changes. When you unlink the folder, leave the workspace or delete your account, your data
+		leaves the team's view.
 	</p>
 
 	<h2>4. Data Security</h2>
