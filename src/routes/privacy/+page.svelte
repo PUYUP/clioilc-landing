@@ -35,8 +35,8 @@
 		<li>
 			<strong>Change history</strong> — for security, we keep a history of changes to accounts,
 			devices, workspaces, projects and invitations (who changed what, and when). It does not
-			include your agent activity, your email address or any keys. When you delete your
-			account, your name is removed from it.
+			include your agent activity, your email address or any keys. Entries are deleted after one
+			year, and when you delete your account, your name is removed from it.
 		</li>
 	</ul>
 
