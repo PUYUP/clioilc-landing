@@ -60,8 +60,9 @@
 	<h2>5. Data Retention</h2>
 	<p>
 		We retain your data for as long as your account is active or as needed to provide
-		the Service. You may request deletion of your account and data at any time by
-		<a href="/contact">contacting us</a>. Data kept locally by the CLI (in
+		the Service. You can download an export of your data, or permanently delete your
+		account and everything synced to it, at any time from the Account page of the
+		dashboard; you can also <a href="/contact">contact us</a> to do it for you. Data kept locally by the CLI (in
 		<code>~/.clioilc</code>) stays on your machine and is yours to delete.
 	</p>
 
