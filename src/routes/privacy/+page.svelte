@@ -32,6 +32,12 @@
 			<strong>Technical data</strong> — IP address and browser type in server logs, used for
 			security and troubleshooting.
 		</li>
+		<li>
+			<strong>Change history</strong> — for security, we keep a history of changes to accounts,
+			devices, workspaces, projects and invitations (who changed what, and when). It does not
+			include your agent activity, your email address or any keys. When you delete your
+			account, your name is removed from it.
+		</li>
 	</ul>
 
 	<h2>2. How We Use Your Information</h2>
