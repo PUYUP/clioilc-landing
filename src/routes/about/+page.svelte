@@ -1,3 +1,7 @@
+<script>
+	import { DASH_URL, TRACKER_REPO } from '$lib/site.js';
+</script>
+
 <svelte:head>
 	<title>About — clioilc</title>
 </svelte:head>
@@ -8,28 +12,48 @@
 
 	<h2>Our Mission</h2>
 	<p>
-		AI coding agents — Claude, Gemini, Codex, and others — are transforming how software
-		gets built. But as agents take on more work, understanding what they did, where they
-		erred, and how they improvised becomes critical. clioilc exists to bring clarity to
-		that process.
+		AI coding agents now write, run and fix a large share of the code we ship. When an agent
+		works for an hour, the final diff tells you little about what it actually did, where it got
+		stuck, or what it cost. clioilc exists to make that work visible.
 	</p>
 
 	<h2>What We Do</h2>
 	<p>
-		clioilc tracks every interaction your AI agents have with your codebase: prompts,
-		tool calls, file changes, errors, refactors, and improvisations. We turn that raw
-		activity into clear statistics and insights, so you can compare agents, spot
-		failure patterns, and measure productivity.
+		clioilc reads the session logs your agent already keeps on your machine and turns them into
+		a clear record: every prompt, reply and tool call, which ones failed and why, the tokens used
+		and what they would cost on the API, per project, model and day. You can read it in the
+		terminal, or sync it to your dashboard at <a href={DASH_URL}>{DASH_URL.replace('https://', '')}</a>.
+	</p>
+	<p>
+		We start with Claude Code. Support for Gemini CLI and Codex is on the way, and readers for
+		other agents are plugins anyone can write.
 	</p>
 
 	<h2>Why It Matters</h2>
 	<ul>
-		<li><strong>Transparency</strong> — see exactly what your agents did, not just the final diff</li>
-		<li><strong>Quality</strong> — track error rates and catch issues before they reach production</li>
-		<li><strong>Comparison</strong> — benchmark Claude vs Gemini vs Codex on real work</li>
-		<li><strong>Improvement</strong> — identify where agents struggle and improve your workflows</li>
+		<li><strong>Transparency</strong> — see what your agent did, step by step, not just the final diff</li>
+		<li><strong>Quality</strong> — spot failing tool calls and API errors as they happen</li>
+		<li><strong>Cost</strong> — know which projects and models your tokens go to</li>
+		<li><strong>Privacy</strong> — your prompts and replies stay yours, encrypted end-to-end if you choose</li>
 	</ul>
 
+	<h2>Open Source</h2>
+	<p>
+		The <code>clioilc</code> CLI that runs on your machine is open source, so you can check
+		exactly what it reads and what it sends: <a href={TRACKER_REPO}>{TRACKER_REPO.replace('https://', '')}</a>.
+	</p>
+
 	<h2>Get in Touch</h2>
-	<p>Have questions or want to learn more? <a href="/contact">Contact us</a>.</p>
+	<p>Have questions or want to learn more? Read the <a href="/docs">docs</a> or <a href="/contact">contact us</a>.</p>
 </div>
+
+<style>
+	code {
+		font-family: 'SF Mono', Menlo, Consolas, monospace;
+		font-size: 0.85em;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 0.05rem 0.35rem;
+	}
+</style>

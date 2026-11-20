@@ -1,52 +1,57 @@
+<script>
+	import { DASH_URL, TRACKER_REPO } from '$lib/site.js';
+
+	const dash = DASH_URL.replace('https://', '');
+</script>
+
 <svelte:head>
-	<title>clioilc — AI Agent Interaction Tracker</title>
+	<title>clioilc — See what your AI coding agent did</title>
 	<meta
 		name="description"
-		content="Track every AI agent interaction — Claude, Gemini, Codex, and more — in a single dashboard."
+		content="Every prompt, reply, tool call, error and dollar your AI coding agent spends, in one dashboard. Starting with Claude Code."
 	/>
 </svelte:head>
 
 <header class="hero">
-	<span class="badge">Observability for AI Agents</span>
+	<span class="badge">Observability for AI coding agents</span>
 	<h1 class="logo">clioilc</h1>
 	<p class="tagline">
-		Track every AI agent interaction — Claude, Gemini, Codex, and more — in a single dashboard.
-		Monitor errors, refactors, improvisations, and all agent activity across your codebase.
+		See what your AI coding agent did — every prompt, reply, tool call, error and dollar — in one
+		dashboard. Starting with Claude Code.
 	</p>
 	<div class="cta">
 		<a class="btn btn-primary" href="/docs">Start Tracking</a>
-		<a class="btn btn-ghost" href="#stats">View Stats</a>
+		<a class="btn btn-ghost" href="#features">What you get</a>
 	</div>
 </header>
 
 <section id="agents">
 	<p class="section-label">Supported Agents</p>
-	<h2>Every coding agent, one place</h2>
+	<h2>Built for Claude Code, open to more</h2>
 	<p class="section-sub">
-		clioilc integrates with the most popular AI coding agents and automatically records
-		every interaction, tool call, and code change.
+		clioilc reads the session logs your agent already writes on your machine. Nothing to wrap, no
+		proxy in between.
 	</p>
 	<div class="agents">
-		<div class="agent"><h3><span class="dot" style="background:#d97757"></span>Claude</h3><p>Track Claude Code, Claude.ai, and API interactions.</p></div>
-		<div class="agent"><h3><span class="dot" style="background:#4285f4"></span>Gemini</h3><p>Monitor Gemini CLI and Google AI agent sessions.</p></div>
-		<div class="agent"><h3><span class="dot" style="background:#10a37f"></span>Codex</h3><p>Analyze OpenAI Codex work across your codebase.</p></div>
-		<div class="agent"><h3><span class="dot" style="background:#999999"></span>And more</h3><p>GPT, Copilot, Aider, Devin, and custom agents.</p></div>
-	</div>
-</section>
-
-<section id="stats">
-	<p class="section-label">Stats Dashboard</p>
-	<h2>Data, not guesses</h2>
-	<p class="section-sub">
-		Get clear insights into your agents' performance and behavior across every project.
-	</p>
-	<div class="stats">
-		<div class="stat"><div class="value">1.2%</div><div class="label">Error Rate</div></div>
-		<div class="stat"><div class="value">1,847</div><div class="label">Files Refactored</div></div>
-		<div class="stat"><div class="value">326</div><div class="label">Improvisations</div></div>
-		<div class="stat"><div class="value">48.2M</div><div class="label">Tokens Used</div></div>
-		<div class="stat"><div class="value">12,904</div><div class="label">Sessions Tracked</div></div>
-		<div class="stat"><div class="value">3.4m</div><div class="label">Avg. Resolution</div></div>
+		<div class="agent">
+			<h3><span class="dot" style="background:#d97757"></span>Claude Code</h3>
+			<p><strong>Supported.</strong> Tokens, cost, prompts, replies, thinking and every tool call.</p>
+		</div>
+		<div class="agent">
+			<h3><span class="dot" style="background:#4285f4"></span>Gemini CLI</h3>
+			<p>Coming soon.</p>
+		</div>
+		<div class="agent">
+			<h3><span class="dot" style="background:#10a37f"></span>Codex</h3>
+			<p>Coming soon.</p>
+		</div>
+		<div class="agent">
+			<h3><span class="dot" style="background:#999999"></span>Your agent</h3>
+			<p>
+				Readers are plugins: <code>clioilc add mod &lt;name&gt;</code> scaffolds one.
+				<a href={TRACKER_REPO}>See the source</a>.
+			</p>
+		</div>
 	</div>
 </section>
 
@@ -54,63 +59,108 @@
 	<p class="section-label">How It Works</p>
 	<h2>Three steps to full visibility</h2>
 	<p class="section-sub">
-		No complex setup. clioilc works with the tools you already use.
+		About ten minutes from install to your first day in the dashboard.
+		<a href="/docs">Read the full guide</a>.
 	</p>
 	<div class="steps">
 		<div class="step">
 			<div class="step-number">1</div>
 			<h3>Install the CLI</h3>
-			<p>Install <code>clioilc</code> globally in seconds. No agents to wrap, no proxies to configure, and no changes to how you already work.</p>
+			<p>
+				<code>cargo install</code> the <code>clioilc</code> CLI and import your Claude Code history.
+				Try <code>clioilc activity</code> in the terminal before anything leaves your machine.
+			</p>
 		</div>
 		<div class="step">
 			<div class="step-number">2</div>
-			<h3>Auto-Scan Project JSONs</h3>
-			<p>Run <code>clioilc</code> in your project root. It automatically discovers and parses local agent session and log <code>.json</code> files (Claude, Gemini, Codex, and more).</p>
+			<h3>Connect your machine</h3>
+			<p>
+				Run <code>clioilc login</code>, approve the code in your browser, and pick server-side or
+				end-to-end encryption. <code>clioilc service install</code> keeps it syncing in the
+				background.
+			</p>
 		</div>
 		<div class="step">
 			<div class="step-number">3</div>
-			<h3>Get Instant Insights</h3>
-			<p>See clear terminal stats on tool calls, error loops, unexpected file edits, and side-by-side agent performance — all locally on your machine.</p>
+			<h3>See it in the dashboard</h3>
+			<p>
+				Open <a href={DASH_URL}>{dash}</a>: cost, tokens, errors and a timeline of every session,
+				updated within about 30 seconds.
+			</p>
 		</div>
 	</div>
 </section>
 
 <section id="features">
 	<p class="section-label">Features</p>
-	<h2>What you can track</h2>
-	<p class="section-sub">
-		From error detection to agent improvisation patterns — everything is logged and analyzable.
-	</p>
+	<h2>What you get</h2>
+	<p class="section-sub">Everything comes from your agent's own logs, so nothing is estimated from guesses.</p>
 	<div class="features">
 		<div class="feature">
-			<div class="icon">⚠️</div>
-			<h3>Error Tracking</h3>
-			<p>Detect errors produced by agents — syntax errors, build failures, and runtime issues — with breakdowns per agent and per file.</p>
-		</div>
-		<div class="feature">
-			<div class="icon">♻️</div>
-			<h3>Refactor Metrics</h3>
-			<p>Measure how often and how extensively agents refactor code, including complexity changes.</p>
-		</div>
-		<div class="feature">
-			<div class="icon">✨</div>
-			<h3>Improvisation</h3>
-			<p>Track when agents take initiative on their own — problem solving, optimizations, and decisions beyond the original prompt.</p>
-		</div>
-		<div class="feature">
-			<div class="icon">📊</div>
-			<h3>Agent Comparison</h3>
-			<p>Compare Claude vs Gemini vs Codex performance based on accuracy, speed, and error rates.</p>
+			<div class="icon">💸</div>
+			<h3>Cost by project and model</h3>
+			<p>
+				What your tokens would cost on the Claude API, priced per message at the rate of the day,
+				per hour or day and broken down by project and model.
+			</p>
 		</div>
 		<div class="feature">
 			<div class="icon">⏱️</div>
-			<h3>Session Timeline</h3>
-			<p>Replay every agent session chronologically — prompts, actions, tool calls, and results.</p>
+			<h3>Session timeline</h3>
+			<p>
+				Every prompt, reply, thinking block and tool call, grouped by session. Filter by type,
+				status or project, or search the text.
+			</p>
 		</div>
 		<div class="feature">
-			<div class="icon">🔔</div>
-			<h3>Alerts &amp; Export</h3>
-			<p>Get notified when error rates spike, and export data to CSV/JSON for deeper analysis.</p>
+			<div class="icon">⚠️</div>
+			<h3>Errors at a glance</h3>
+			<p>
+				A year-long calendar of successful and failed tool calls. Click a day to jump straight to
+				what went wrong, with the error output.
+			</p>
+		</div>
+		<div class="feature">
+			<div class="icon">🔒</div>
+			<h3>Private by design</h3>
+			<p>
+				Secrets are redacted on your machine. Statistics carry no paths or text, and your prompts
+				and replies are encrypted, end-to-end if you choose.
+			</p>
+		</div>
+		<div class="feature">
+			<div class="icon">💻</div>
+			<h3>Every machine, one account</h3>
+			<p>
+				Connect each laptop with one login; the same project counts once. See which machines are
+				active, and revoke any of them.
+			</p>
+		</div>
+		<div class="feature">
+			<div class="icon">⌨️</div>
+			<h3>Works in the terminal too</h3>
+			<p>
+				<code>clioilc activity</code> and <code>clioilc usage report</code> show the same data
+				locally, with or without an account.
+			</p>
 		</div>
 	</div>
 </section>
+
+<style>
+	.agent p strong { color: var(--fg); }
+	.agent a,
+	.section-sub a,
+	.step a { color: var(--fg); }
+	.agent code,
+	.feature code {
+		font-family: 'SF Mono', Menlo, Consolas, monospace;
+		font-size: 0.78rem;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 0.05rem 0.35rem;
+		white-space: nowrap;
+	}
+	.agent code { background: #fff; }
+</style>

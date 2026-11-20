@@ -1,6 +1,6 @@
 <script>
 	import Code from '$lib/Code.svelte';
-	import { API_URL, APP_URL, TRACKER_REPO } from '$lib/site.js';
+	import { API_URL, DASH_URL, TRACKER_REPO } from '$lib/site.js';
 
 	const toc = [
 		{ id: 'how-it-works', label: 'How it works' },
@@ -54,7 +54,7 @@
 				<code>~/.clioilc/usage.db</code>, and uploads new rows to your account.
 			</li>
 			<li>
-				<strong>The dashboard</strong> at <a href={APP_URL}>{APP_URL.replace('https://', '')}</a> shows
+				<strong>The dashboard</strong> at <a href={DASH_URL}>{DASH_URL.replace('https://', '')}</a> shows
 				cost, tokens, errors and a timeline of every prompt, reply and tool call.
 			</li>
 		</ul>
@@ -121,7 +121,7 @@ clioilc activity --date 2026-11-14 --thinking --full`}
 		<p>The CLI prints a code and opens your browser:</p>
 		<Code
 			label="Output"
-			code={`  Open:  ${APP_URL}/device
+			code={`  Open:  ${DASH_URL}/device
   Code:  ABCD-EFGH
 
 waiting for approval (Ctrl+C to cancel) ...`}
@@ -191,7 +191,7 @@ clioilc service uninstall`}
 		</p>
 
 		<h2 id="dashboard">6. Use the dashboard</h2>
-		<p>Open <a href={APP_URL}>{APP_URL.replace('https://', '')}</a> and sign in with GitHub.</p>
+		<p>Open <a href={DASH_URL}>{DASH_URL.replace('https://', '')}</a> and sign in with GitHub.</p>
 		<h3>Overview</h3>
 		<ul>
 			<li>

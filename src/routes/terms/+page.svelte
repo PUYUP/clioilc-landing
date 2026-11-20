@@ -1,10 +1,14 @@
+<script>
+	import { DASH_URL } from '$lib/site.js';
+</script>
+
 <svelte:head>
 	<title>Terms of Service — clioilc</title>
 </svelte:head>
 
 <div class="page">
 	<h1>Terms of Service</h1>
-	<p class="updated">Last updated: November 19, 2026</p>
+	<p class="updated">Last updated: November 20, 2026</p>
 
 	<h2>1. Acceptance of Terms</h2>
 	<p>
@@ -14,9 +18,12 @@
 
 	<h2>2. Description of Service</h2>
 	<p>
-		clioilc is an observability platform that tracks interactions with AI coding agents,
-		including but not limited to Claude, Gemini, and Codex. The Service provides analytics,
-		statistics, and reporting on agent activity.
+		clioilc is an observability platform for AI coding agents, currently Claude Code. It
+		consists of the <code>clioilc</code> command-line tool, which reads your agent's local
+		session logs and uploads them to your account, and the dashboard at
+		<a href={DASH_URL}>{DASH_URL.replace('https://', '')}</a>, which provides analytics,
+		statistics, cost estimates and an activity timeline. Cost figures are estimates at public
+		API prices, not invoices.
 	</p>
 
 	<h2>3. Acceptable Use</h2>
@@ -25,7 +32,10 @@
 		<li>Use the Service for any unlawful purpose</li>
 		<li>Attempt to gain unauthorized access to the Service or its systems</li>
 		<li>Interfere with or disrupt the integrity or performance of the Service</li>
-		<li>Reverse engineer, decompile, or disassemble any part of the Service</li>
+		<li>
+			Reverse engineer, decompile, or disassemble any part of the Service, except components
+			published as open source, which are governed by their own licenses
+		</li>
 	</ul>
 
 	<h2>4. Intellectual Property</h2>
@@ -51,3 +61,14 @@
 	<h2>7. Contact</h2>
 	<p>Questions about these Terms? <a href="/contact">Contact us</a>.</p>
 </div>
+
+<style>
+	code {
+		font-family: 'SF Mono', Menlo, Consolas, monospace;
+		font-size: 0.85em;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 0.05rem 0.35rem;
+	}
+</style>

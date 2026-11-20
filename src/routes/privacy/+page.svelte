@@ -4,14 +4,34 @@
 
 <div class="page">
 	<h1>Privacy Policy</h1>
-	<p class="updated">Last updated: November 19, 2026</p>
+	<p class="updated">Last updated: November 20, 2026</p>
 
 	<h2>1. Information We Collect</h2>
-	<p>We may collect the following types of information:</p>
+	<p>We collect the following types of information:</p>
 	<ul>
-		<li><strong>Account information</strong> — name, email address, and organization details</li>
-		<li><strong>Usage data</strong> — interactions with AI agents, tool calls, and code changes tracked through the Service</li>
-		<li><strong>Technical data</strong> — IP address, browser type, and device information</li>
+		<li>
+			<strong>Account information</strong> — from GitHub when you sign in: your username, email
+			address and avatar. We never see your GitHub password.
+		</li>
+		<li>
+			<strong>Usage statistics</strong> — for each agent message and tool call: model, token
+			counts, status, tool name and time, with project, session and message identifiers
+			replaced by one-way hashes.
+		</li>
+		<li>
+			<strong>Private activity data</strong> — the prompts you write, the agent's replies and
+			thinking, short summaries of tool calls (such as the command run or the file path), error
+			output, and project folder names. The CLI removes secrets in common formats and shortens
+			long text on your machine before upload. We do not receive your source files.
+		</li>
+		<li>
+			<strong>Device information</strong> — the name of each connected machine (its hostname,
+			unless you choose another) and when it last synced.
+		</li>
+		<li>
+			<strong>Technical data</strong> — IP address and browser type in server logs, used for
+			security and troubleshooting.
+		</li>
 	</ul>
 
 	<h2>2. How We Use Your Information</h2>
@@ -19,7 +39,6 @@
 	<ul>
 		<li>Provide, operate, and improve the Service</li>
 		<li>Generate analytics and statistics on AI agent activity</li>
-		<li>Send service-related notifications and updates</li>
 		<li>Detect, prevent, and address technical issues and abuse</li>
 	</ul>
 
@@ -31,14 +50,19 @@
 
 	<h2>4. Data Security</h2>
 	<p>
-		We implement reasonable technical and organizational measures to protect your
-		information. However, no method of transmission over the Internet is 100% secure.
+		Data is sent over HTTPS. Private activity data is encrypted at rest with a key per account.
+		If you choose end-to-end encryption, it is encrypted on your machine with a key derived
+		from your passphrase, and we cannot read it; if you lose the passphrase, we cannot recover
+		it. Device tokens can upload data but cannot read your activity back, and you can revoke them at any
+		time. No method of transmission or storage is 100% secure.
 	</p>
 
 	<h2>5. Data Retention</h2>
 	<p>
 		We retain your data for as long as your account is active or as needed to provide
-		the Service. You may request deletion of your data at any time.
+		the Service. You may request deletion of your account and data at any time by
+		<a href="/contact">contacting us</a>. Data kept locally by the CLI (in
+		<code>~/.clioilc</code>) stays on your machine and is yours to delete.
 	</p>
 
 	<h2>6. Your Rights</h2>
@@ -52,3 +76,14 @@
 	<h2>7. Contact</h2>
 	<p>Questions about this policy? <a href="/contact">Contact us</a>.</p>
 </div>
+
+<style>
+	code {
+		font-family: 'SF Mono', Menlo, Consolas, monospace;
+		font-size: 0.85em;
+		background: var(--card);
+		border: 1px solid var(--border);
+		border-radius: 6px;
+		padding: 0.05rem 0.35rem;
+	}
+</style>
