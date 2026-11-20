@@ -16,7 +16,8 @@
       "Exec(npm install)",
       "Exec(git init)",
       "Exec(git commit)",
-      "Exec(git add)"
+      "Exec(git add)",
+      "Exec(cat)"
     ]
   }
 }

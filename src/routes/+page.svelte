@@ -8,7 +8,7 @@
 
 <header class="hero">
 	<span class="badge">Observability for AI Agents</span>
-	<h1 class="logo">clioil<span class="flip">c</span></h1>
+	<h1 class="logo">clioilc</h1>
 	<p class="tagline">
 		Track every AI agent interaction — Claude, Gemini, Codex, and more — in a single dashboard.
 		Monitor errors, refactors, improvisations, and all agent activity across your codebase.

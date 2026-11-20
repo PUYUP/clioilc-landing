@@ -17,7 +17,7 @@
 </script>
 
 <nav class="nav">
-	<a href="/" class="logo">clioil<span class="flip">c</span></a>
+	<a href="/" class="logo">clioilc</a>
 	<div>
 		{#each navLinks as link}
 			<a href={link.href}>{link.label}</a>
