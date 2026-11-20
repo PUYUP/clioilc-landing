@@ -14,7 +14,7 @@
 		Monitor errors, refactors, improvisations, and all agent activity across your codebase.
 	</p>
 	<div class="cta">
-		<a class="btn btn-primary" href="#">Start Tracking</a>
+		<a class="btn btn-primary" href="/docs">Start Tracking</a>
 		<a class="btn btn-ghost" href="#stats">View Stats</a>
 	</div>
 </header>
