@@ -26,7 +26,8 @@
 		</li>
 		<li>
 			<strong>Device information</strong> — the name of each connected machine (its hostname,
-			unless you choose another) and when it last synced.
+			unless you choose another) and when it last synced. The name is shown next to the work it
+			sent.
 		</li>
 		<li>
 			<strong>Technical data</strong> — IP address and browser type in server logs, used for
@@ -61,8 +62,10 @@
 		<strong>Team workspaces.</strong> Nothing is shared with other people unless you join a
 		workspace and link a folder to one of its projects with <code>clioilc link</code>. From then
 		on, members who can see that project see its usage, costs, errors and tool actions (such as
-		commands and file paths), from the moment you linked it, or with its earlier history if you
-		chose that. Your prompts, replies and thinking stay private unless you turn on sharing for
+		commands and file paths), with your username and the name of the device each item came
+		from, from the moment you linked it, or with its earlier history if you chose that. Workspace
+		admins also see the agent plans you entered on the Pricing page, compared with your usage in
+		the workspace's projects. Your prompts, replies and thinking stay private unless you turn on sharing for
 		that project. Workspace admins also see an audit log of membership, invitation and link
 		changes. When you unlink the folder, leave the workspace or delete your account, your data
 		leaves the team's view.

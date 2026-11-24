@@ -18,9 +18,9 @@
 
 	<h2>2. Description of Service</h2>
 	<p>
-		clioilc is an observability platform for AI coding agents, currently Claude Code. It
-		consists of the <code>clioilc</code> command-line tool, which reads your agent's local
-		session logs and uploads them to your account, and the dashboard at
+		clioilc is an observability platform for AI coding agents, currently Claude Code and Devin
+		CLI. It consists of the <code>clioilc</code> command-line tool, which reads your agents' local
+		history and uploads it to your account, and the dashboard at
 		<a href={DASH_URL}>{DASH_URL.replace('https://', '')}</a>, which provides analytics,
 		statistics, cost estimates and an activity timeline. Cost figures are estimates at public
 		API prices, not invoices.

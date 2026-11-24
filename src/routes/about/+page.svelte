@@ -25,8 +25,9 @@
 		terminal, or sync it to your dashboard at <a href={DASH_URL}>{DASH_URL.replace('https://', '')}</a>.
 	</p>
 	<p>
-		We start with Claude Code. Support for Gemini CLI and Codex is on the way, and readers for
-		other agents are plugins anyone can write.
+		Claude Code and Devin CLI are supported today. Antigravity and Codex are on the way, and
+		readers for other agents are plugins anyone can write, following a published reader
+		contract.
 	</p>
 
 	<h2>Why It Matters</h2>
