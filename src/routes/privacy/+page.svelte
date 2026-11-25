@@ -67,8 +67,11 @@
 		admins also see the agent plans you entered on the Pricing page, compared with your usage in
 		the workspace's projects. Your prompts, replies and thinking stay private unless you turn on sharing for
 		that project. Workspace admins also see an audit log of membership, invitation and link
-		changes. When you unlink the folder, leave the workspace or delete your account, your data
-		leaves the team's view.
+		changes. When you unlink the folder or leave the workspace, your data leaves the team's view;
+		the team keeps only an hourly summary of what it saw (message, token and tool counts and cost,
+		per agent and model, under your username), so its past reports and budgets stay the same.
+		When you delete your account, your data leaves the team's view and your username is removed
+		from those summaries.
 	</p>
 
 	<h2>4. Data Security</h2>
