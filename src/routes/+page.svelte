@@ -2,6 +2,41 @@
 	import { DASH_URL, TRACKER_REPO } from '$lib/site.js';
 
 	const dash = DASH_URL.replace('https://', '');
+
+	// Real dashboard screenshots (static/screens), cropped so no prompts,
+	// paths or project names show.
+	const tour = [
+		{
+			src: '/screens/compare.webp',
+			path: '/compare',
+			w: 1247,
+			h: 640,
+			label: 'Compare',
+			title: 'Which agent is worth it',
+			text: 'Claude Code next to Devin, model by model, over the same work: what each one cost, how much of it shipped, and the price per delivered item and per commit.',
+			alt: 'Compare page: agents and models side by side with responses, cost, items delivered, commits and cost per commit'
+		},
+		{
+			src: '/screens/pricing.webp',
+			path: '/pricing',
+			w: 1247,
+			h: 528,
+			label: 'Plans',
+			title: 'Does your plan pay off?',
+			text: 'Your month so far at API rates, projected to the end of the month, against the plan you pay for, and which plan would cost less for the way you actually work.',
+			alt: 'Plans page: month-to-date API-equivalent cost per agent, projected month-end cost, and a plan that would cost less'
+		},
+		{
+			src: '/screens/report.webp',
+			path: '/report',
+			w: 920,
+			h: 218,
+			label: 'Reports',
+			title: 'A report your client can read',
+			text: 'Work items, delivery, commits, active time and AI cost for a project and period. Print it, save it as PDF or export CSV. Prompts are never in it.',
+			alt: 'Work report summary: work items, delivered, commits, pull requests, active time, AI responses, tokens and AI cost'
+		}
+	];
 </script>
 
 <svelte:head>
@@ -21,8 +56,21 @@
 	</p>
 	<div class="cta">
 		<a class="btn btn-primary" href="/docs">Start Tracking</a>
-		<a class="btn btn-ghost" href="#features">What you get</a>
+		<a class="btn btn-ghost" href="#tour">See the dashboard</a>
 	</div>
+	<figure class="shot hero-shot">
+		<div class="shot-bar" aria-hidden="true">
+			<span></span><span></span><span></span>
+			<em>{dash}</em>
+		</div>
+		<img
+			src="/screens/overview.webp"
+			width="1247"
+			height="654"
+			fetchpriority="high"
+			alt="clioilc overview: a year of succeeded and failed tool calls per day, and cost, messages, tokens and tool calls for the last 7 days"
+		/>
+	</figure>
 </header>
 
 <section id="agents">
@@ -97,6 +145,30 @@
 			</p>
 		</div>
 	</div>
+</section>
+
+<section id="tour">
+	<p class="section-label">A Look Inside</p>
+	<h2>Answers, not just logs</h2>
+	<p class="section-sub">
+		Real screens from the dashboard. Every number comes from your agents' own history.
+	</p>
+	{#each tour as t, i}
+		<div class="tour-row" class:flip={i % 2 === 1}>
+			<div class="tour-text">
+				<p class="tour-label">{t.label}</p>
+				<h3>{t.title}</h3>
+				<p>{t.text}</p>
+			</div>
+			<figure class="shot">
+				<div class="shot-bar" aria-hidden="true">
+					<span></span><span></span><span></span>
+					<em>{dash}{t.path}</em>
+				</div>
+				<img src={t.src} width={t.w} height={t.h} loading="lazy" alt={t.alt} />
+			</figure>
+		</div>
+	{/each}
 </section>
 
 <section id="features">
@@ -221,4 +293,69 @@
 		white-space: nowrap;
 	}
 	.agent code { background: #fff; white-space: normal; overflow-wrap: anywhere; }
+
+	/* Screenshots in a light browser frame. */
+	.shot {
+		border: 1px solid var(--border);
+		border-radius: 14px;
+		overflow: hidden;
+		background: #fafafa;
+		box-shadow:
+			0 1px 2px rgba(0, 0, 0, 0.04),
+			0 24px 60px -20px rgba(0, 0, 0, 0.18);
+	}
+	.shot img { display: block; width: 100%; height: auto; }
+	.shot-bar {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 0.6rem 0.9rem;
+		border-bottom: 1px solid var(--border);
+		background: #f3f3f3;
+	}
+	.shot-bar span { width: 10px; height: 10px; border-radius: 50%; background: #d9d9d9; }
+	.shot-bar em {
+		margin-left: 0.75rem;
+		font-style: normal;
+		font-size: 0.72rem;
+		color: var(--muted);
+		font-family: 'SF Mono', Menlo, Consolas, monospace;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.hero-shot {
+		position: relative;
+		z-index: 1;
+		width: min(1100px, 100%);
+		margin-top: 4.5rem;
+		text-align: left;
+	}
+
+	.tour-row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr);
+		gap: 3rem;
+		align-items: center;
+		margin-bottom: 5rem;
+	}
+	.tour-row:last-child { margin-bottom: 0; }
+	/* Flipped: the screenshot keeps the wide column, now on the left. */
+	.tour-row.flip { grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); }
+	.tour-row.flip .tour-text { order: 2; }
+	.tour-label {
+		font-size: 0.72rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		color: var(--muted);
+		margin-bottom: 0.6rem;
+	}
+	.tour-text h3 { font-size: 1.5rem; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
+	.tour-text p:last-child { color: var(--muted); font-size: 0.95rem; }
+	@media (max-width: 820px) {
+		.tour-row,
+		.tour-row.flip { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 3.5rem; }
+		.tour-row.flip .tour-text { order: 0; }
+		.hero-shot { margin-top: 3rem; }
+	}
 </style>
