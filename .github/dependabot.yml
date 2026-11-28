@@ -1,0 +1,6 @@
+# Weekly update PRs (security fixes included). Review each like any other change.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly }
