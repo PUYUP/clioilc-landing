@@ -7,6 +7,16 @@
 	// paths or project names show.
 	const tour = [
 		{
+			src: '/screens/journal.webp',
+			path: '/journal',
+			w: 1247,
+			h: 828,
+			label: 'Journal',
+			title: 'Work items, anchored to git',
+			text: 'Every request you give an agent becomes a work item that follows it to the end: in progress, committed, done or abandoned, with the commits it produced. Open one to read what you asked and what the agent answered, with the model, tokens, active time and cost. Summarize or listen to it, and export the lot as CSV or JSON.',
+			alt: "Journal page: work items with status In progress and Done, branch, cost, model, device and tokens, and an expanded item showing the prompt and the agent's answer"
+		},
+		{
 			src: '/screens/compare.webp',
 			path: '/compare',
 			w: 1247,
@@ -29,12 +39,12 @@
 		{
 			src: '/screens/report.webp',
 			path: '/report',
-			w: 920,
-			h: 218,
+			w: 1247,
+			h: 826,
 			label: 'Reports',
 			title: 'A report your client can read',
-			text: 'Work items, delivery, commits, active time and AI cost for a project and period. Print it, save it as PDF or export CSV. Prompts are never in it.',
-			alt: 'Work report summary: work items, delivered, commits, pull requests, active time, AI responses, tokens and AI cost'
+			text: 'One project and one period: how many work items were delivered, the commits behind each one, active time, the agents and models involved, and the AI cost if you want to show it. Print it, save it as PDF or export CSV. Prompts and answers never appear in it.',
+			alt: 'Work report for one project and period: totals for work items, delivered, commits, active time, AI responses, tokens and AI cost, then each work item with its dates, commits and cost'
 		}
 	];
 </script>
